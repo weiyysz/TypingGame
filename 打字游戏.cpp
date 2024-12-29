@@ -207,13 +207,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 MessageBoxA(hWnd, s, "游戏结束", 0);
                 SetTimer(hWnd, 2, 300, NULL);
             }
-            InvalidateRect(hWnd, 0, 0);
+            InvalidateRect(hWnd, NULL, TRUE);
             break;
         case 2:
-            InvalidateRect(hWnd, 0, 0);
+            InvalidateRect(hWnd, NULL, TRUE);
             break;
         case 3:
-            InvalidateRect(hWnd, 0, 0);
+            InvalidateRect(hWnd, NULL, TRUE);
             break;
         }
         break;
@@ -227,7 +227,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             case 0:
             {
                 KillTimer(hWnd, 3);
-                InvalidateRect(hWnd, 0, 0);
+                InvalidateRect(hWnd, NULL, TRUE);
 
                 if (gameover == 1)
                     KillTimer(hWnd, 2);
@@ -275,7 +275,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             {
             case ID_START:
                 KillTimer(hWnd, 3);
-                InvalidateRect(hWnd, 0, 0);
+                InvalidateRect(hWnd, NULL, TRUE);
                 if(gameover == 1)
                     KillTimer(hWnd, 2);
                 gameover = 1;
